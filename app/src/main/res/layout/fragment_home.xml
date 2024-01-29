@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <androidx.drawerlayout.widget.DrawerLayout
+        android:id="@+id/drawerLayout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context="com.example.dogtranslate.ui.home.HomeFragment">
+
+        <RelativeLayout
+            android:id="@+id/relativeLayout"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="#555555">
+
+            <com.example.dogtranslate.ui.widget.ActionBarHeaderCommon
+                android:id="@+id/abUserNavigation"
+                android:layout_width="match_parent"
+                android:layout_height="?actionBarSize"
+                android:layout_alignParentTop="true"
+                android:elevation="10dp"
+                app:src_one="@drawable/ic_menu"
+                app:src_one_enable="true"
+                app:text_view_one="@string/label_dog_translate"
+                app:text_view_one_enable="true" />
+
+            <ImageView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_alignParentStart="true"
+                android:layout_alignParentTop="true"
+                android:layout_alignParentEnd="true"
+                android:layout_alignParentBottom="true"
+                android:importantForAccessibility="no"
+                android:scaleType="fitXY"
+                android:src="@drawable/bg_translator" />
+
+            <androidx.viewpager2.widget.ViewPager2
+                android:id="@+id/vpData"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_above="@id/nvbDogTranslate"
+                android:layout_below="@+id/abUserNavigation" />
+
+            <com.google.android.material.bottomnavigation.BottomNavigationView
+                android:id="@+id/nvbDogTranslate"
+                android:layout_width="match_parent"
+                android:layout_height="64dp"
+                android:layout_alignParentBottom="true"
+                android:layout_marginHorizontal="16dp"
+                android:layout_marginBottom="20dp"
+                android:background="@drawable/bg_bottom_navigation"
+                android:padding="8dp"
+                app:itemBackground="@drawable/bg_item_select_navigation"
+                app:itemHorizontalTranslationEnabled="true"
+                app:itemIconSize="16dp"
+                app:itemIconTint="@color/white"
+                app:itemPaddingBottom="8dp"
+                app:itemTextAppearanceActive="@style/TextNavigationActive"
+                app:itemTextAppearanceInactive="@style/TextNavigationInactive"
+                app:itemTextColor="@color/white"
+                app:labelVisibilityMode="labeled"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:menu="@menu/menu_bottom_navigation" />
+        </RelativeLayout>
+
+        <com.google.android.material.navigation.NavigationView
+            android:id="@+id/nav_view"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_gravity="start"
+            android:background="#A5A5A5"
+            android:fitsSystemWindows="true" />
+
+    </androidx.drawerlayout.widget.DrawerLayout>
+</layout>

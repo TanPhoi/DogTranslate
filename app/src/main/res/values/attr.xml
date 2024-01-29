@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <declare-styleable name="ActionBarHeaderCommon">
+        <attr name="src_one" format="reference" />
+        <attr name="text_view_one" format="string" />
+
+        <attr name="src_one_enable" format="boolean" />
+        <attr name="text_view_one_enable" format="boolean" />
+    </declare-styleable>
+</resources>

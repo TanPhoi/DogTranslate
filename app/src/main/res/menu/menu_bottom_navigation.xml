@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+    <item
+        android:id="@+id/sounds"
+        android:title="@string/menu_item_sound"
+        android:icon="@drawable/ic_sounds"/>
+    <item
+        android:id="@+id/translator"
+        android:title="@string/menu_item_translator"
+        android:icon="@drawable/ic_translator"/>
+
+    <item
+        android:id="@+id/training"
+        android:title="@string/menu_item_training"
+        android:icon="@drawable/ic_training"/>
+    <item
+        android:id="@+id/whistle"
+        android:title="@string/menu_item_whistle"
+        android:icon="@drawable/ic_whistle"/>
+</menu>

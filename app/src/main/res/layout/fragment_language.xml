@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:id="@+id/fragment_container"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="#EDEDED"
+        tools:context=".ui.language.LanguageFragment">
+
+        <com.example.dogtranslate.ui.widget.ActionBarHeaderCommon
+            android:id="@+id/abLanguage"
+            android:layout_width="match_parent"
+            android:layout_height="?actionBarSize"
+            android:layout_alignParentTop="true"
+            app:src_one="@drawable/ic_back"
+            app:src_one_enable="true"
+            app:text_view_one="Language"
+            app:text_view_one_enable="true" />
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/rcvLanguage"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/abLanguage"
+            app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager" />
+    </RelativeLayout>
+</layout>

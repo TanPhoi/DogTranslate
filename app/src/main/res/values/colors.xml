@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="purple_200">#FFBB86FC</color>
+    <color name="purple_500">#FF6200EE</color>
+    <color name="purple_700">#FF3700B3</color>
+    <color name="teal_200">#FF03DAC5</color>
+    <color name="teal_700">#FF018786</color>
+    <color name="white">#FFFFFFFF</color>
+    <color name="black">#000000</color>
+    <color name="grey">#AEAEAE</color>
+    <color name="red">#D61616</color>
+    <color name="blue">#399CED</color>
+    <color name="background">#1B1B1B</color>
+    <color name="calendar_selected_week_background">#FFE082</color>
+    <color name="calendar_focused_month_date">#FF5722</color>
+    <color name="calendar_unfocused_month_date">#757575</color>
+    <color name="calendar_week_number">#FF5722</color>
+    <color name="calendar_week_separator">#BDBDBD</color>
+    <color name="calendar_background">#FFFFFF</color>
+    <color name="dot_active">#FFFFFF</color>
+    <color name="dot_inactive">#BFBFBF</color>
+</resources>
