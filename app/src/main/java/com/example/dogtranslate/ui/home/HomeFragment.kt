@@ -79,6 +79,10 @@ class HomeFragment : BaseFragment<FragmentHomeBinding, HomeViewModel>() {
             binding?.drawerLayout?.close()
         }
 
+        bindingMenu?.ivBack?.setOnSingClickListener {
+            binding?.drawerLayout?.close()
+        }
+
         bindingMenu?.llRate?.setOnSingClickListener {
             val builder: AlertDialog.Builder = AlertDialog.Builder(requireContext())
             bindingDialog = DialogRatingAppBinding.inflate(layoutInflater)
