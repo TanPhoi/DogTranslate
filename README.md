@@ -18,3 +18,20 @@ Dog Translate is a unique application that brings a fun experience when you "tal
 ![Screenshot 2024-01-30 230612](https://github.com/TanPhoi/DogTranslate/assets/155867278/ee12e2d4-d696-44ec-90c0-ab54f2ab7faa)
 
 # Built With
+- The project uses Kotlin as the primary programming language for Android development.
+- It utilizes the Android Gradle Plugin to manage the build and dependencies of the project.
+- The project incorporates Android Architecture Components such as ViewModel and LiveData for managing lifecycle and data between different components of the application.
+- Retrofit is used for making network requests, and OkHttp Logging Interceptor is used for logging network communication.
+- Dagger 2 is employed for Dependency Injection, aiding in managing and providing dependencies for various components of the application.
+- Room Persistence Library is used for working with the SQLite database on Android devices.
+- The Glide library is used for displaying and loading images.
+- Kotlin Coroutines are used for performing asynchronous tasks without the need for callbacks.
+- Timber is utilized for managing logs.
+- JUnit and AndroidX Test are used for unit testing and instrumentation testing.
+- AndroidX and Material Design Components (MDC) are used to build the user interface.
+- View Binding feature is enabled in Gradle to utilize View Binding in the source code.
+- Data Binding is used to connect data and the user interface.
+- LeakCanary library is used to detect and record information about memory leaks during the application runtime.
+- The Android-Gif-Drawable library is used to display GIF images, and Shimmer is used to create a shimmering effect.
+- AndroidX Preference is used to manage application settings.
+- SwipeRefreshLayout is used to add the swipe-to-refresh feature to the user interface.
