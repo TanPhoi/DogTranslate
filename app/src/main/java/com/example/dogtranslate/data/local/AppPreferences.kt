@@ -6,6 +6,7 @@ import javax.inject.Singleton
 
 @Singleton
 class AppPreferences @Inject constructor(private val preferences: SharedPreferences) {
+
     fun saveLanguagePreference(languageCode: String) {
         preferences.edit().putString("language", languageCode).apply()
     }
@@ -29,6 +30,4 @@ class AppPreferences @Inject constructor(private val preferences: SharedPreferen
     fun getFirstScreen(): Boolean {
         return preferences.getBoolean("first_screen", false) ?: false
     }
-
-
 }

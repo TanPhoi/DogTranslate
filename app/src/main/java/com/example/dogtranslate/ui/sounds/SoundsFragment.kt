@@ -1,13 +1,10 @@
 package com.example.dogtranslate.ui.sounds
 
-import android.os.Bundle
-import android.view.View
 import androidx.core.os.bundleOf
 import androidx.navigation.fragment.findNavController
 import com.example.dogtranslate.R
 import com.example.dogtranslate.data.local.model.Dog
 import com.example.dogtranslate.databinding.FragmentSoundsBinding
-import com.example.dogtranslate.ui.base.BaseActivity
 import com.example.dogtranslate.ui.base.BaseFragment
 import com.example.dogtranslate.ui.sounds.adapter.SoundsAdapter
 
@@ -24,21 +21,16 @@ class SoundsFragment : BaseFragment<FragmentSoundsBinding, SoundsViewModel>() {
     }
 
     override fun initView() {
-        viewModel?.isLoading?.observe(this){
-            if (it){
-                (activity as? BaseActivity<*, *>)?.showLoading()
-            }else {
-                (activity as? BaseActivity<*, *>)?.hiddenLoading()
-            }
-        }
         setDataDog()
         handleDogAdapter()
+        adapter?.updatePostList(dogList)
     }
 
     private fun handleDogAdapter() {
         adapter = SoundsAdapter(dogList)
         binding?.rcvDog?.adapter = adapter
 
+        adapter?.notifyDataSetChanged()
         adapter?.itemOnClick = {
             findNavController().navigate(
                 R.id.action_homeFragment_to_showSoundDogFragment, bundleOf(
@@ -46,6 +38,7 @@ class SoundsFragment : BaseFragment<FragmentSoundsBinding, SoundsViewModel>() {
                 )
             )
         }
+
     }
 
     private fun setDataDog() {
@@ -235,12 +228,16 @@ class SoundsFragment : BaseFragment<FragmentSoundsBinding, SoundsViewModel>() {
     override fun onDestroyView() {
         binding?.relativeLayout?.removeAllViews()
         adapter = null
-        dogList.clear()
         super.onDestroyView()
+        dogList.clear()
     }
 
     override fun onDestroy() {
         super.onDestroy()
         viewModel = null
+        binding?.relativeLayout?.removeAllViews()
+        adapter = null
+        super.onDestroyView()
+        dogList.clear()
     }
 }

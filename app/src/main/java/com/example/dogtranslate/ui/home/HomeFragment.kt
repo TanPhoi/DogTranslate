@@ -1,10 +1,14 @@
 package com.example.dogtranslate.ui.home
 
 import android.app.AlertDialog
+import android.content.Context
 import android.graphics.drawable.ColorDrawable
+import android.os.Bundle
 import android.os.Handler
 import android.os.Looper
+import android.view.LayoutInflater
 import android.view.View
+import android.view.ViewGroup
 import androidx.core.view.GravityCompat
 import androidx.navigation.fragment.findNavController
 import com.example.dogtranslate.ui.base.BaseFragment
@@ -28,9 +32,23 @@ class HomeFragment : BaseFragment<FragmentHomeBinding, HomeViewModel>() {
     override fun viewModelClass(): Class<HomeViewModel> = HomeViewModel::class.java
 
     override fun initView() {
+        handleSwipeToRefresh()
         handleBottomNavigation()
         handleDrawer()
         handleMenuNavigation()
+    }
+
+    private fun handleSwipeToRefresh() {
+        binding?.swipeRefreshLayout?.setOnRefreshListener {
+            Handler(Looper.getMainLooper()).postDelayed({
+                fetchData()
+                binding?.swipeRefreshLayout?.isRefreshing = false
+            }, 2000)
+        }
+    }
+
+    private fun fetchData() {
+        handleBottomNavigation()
     }
 
     private fun handleDrawer() {
@@ -133,10 +151,10 @@ class HomeFragment : BaseFragment<FragmentHomeBinding, HomeViewModel>() {
                 val stringComment = bindingDialog?.editFeedback?.text.toString().trim()
                 val newRating = Rating().apply {
                     ratingScore = isRatingScore
-                    if (stringComment.isNotEmpty()) {
-                        comment = stringComment
+                    comment = if (stringComment.isNotEmpty()) {
+                        stringComment
                     } else {
-                        comment = ""
+                        ""
                     }
                     timestamp = System.currentTimeMillis()
                 }
@@ -181,18 +199,13 @@ class HomeFragment : BaseFragment<FragmentHomeBinding, HomeViewModel>() {
         }
     }
 
-    override fun onStart() {
-        super.onStart()
-        handleBottomNavigation()
-    }
-
     override fun onDestroyView() {
         binding?.drawerLayout?.removeAllViewsInLayout()
+        adapter = null
         bindingDialog = null
         bindingMenu = null
         binding = null
         super.onDestroyView()
-        binding?.vpData?.adapter = null
     }
 
     override fun onDestroy() {

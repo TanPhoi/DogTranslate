@@ -1,5 +1,6 @@
 package com.example.dogtranslate.ui.language
 
+import android.widget.Toast
 import androidx.navigation.fragment.findNavController
 import com.example.dogtranslate.R
 import com.example.dogtranslate.data.local.model.Language
@@ -29,6 +30,7 @@ class LanguageFragment : BaseFragment<FragmentLanguageBinding, LanguageViewModel
     }
 
     private fun handleAdapter() {
+
         setDataLanguage()
         adapter = LanguageAdapter(languageList)
         binding?.rcvLanguage?.adapter = adapter

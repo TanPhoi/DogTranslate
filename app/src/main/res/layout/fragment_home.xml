@@ -9,6 +9,11 @@
         android:layout_height="match_parent"
         tools:context="com.example.dogtranslate.ui.home.HomeFragment">
 
+        <androidx.swiperefreshlayout.widget.SwipeRefreshLayout
+            android:id="@+id/swipeRefreshLayout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
         <RelativeLayout
             android:id="@+id/relativeLayout"
             android:layout_width="match_parent"
@@ -67,6 +72,7 @@
                 app:layout_constraintStart_toStartOf="parent"
                 app:menu="@menu/menu_bottom_navigation" />
         </RelativeLayout>
+        </androidx.swiperefreshlayout.widget.SwipeRefreshLayout>
 
         <com.google.android.material.navigation.NavigationView
             android:id="@+id/nav_view"

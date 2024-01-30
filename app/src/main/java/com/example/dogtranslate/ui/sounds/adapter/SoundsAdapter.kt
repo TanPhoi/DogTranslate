@@ -7,13 +7,18 @@ import com.example.dogtranslate.data.local.model.Dog
 import com.example.dogtranslate.databinding.ItemDogBinding
 import com.example.dogtranslate.util.setOnSingClickListener
 
-class SoundsAdapter(private val dogList: ArrayList<Dog>) :
+class SoundsAdapter(private var dogList: ArrayList<Dog>) :
     RecyclerView.Adapter<SoundsAdapter.SoundsViewHolder>() {
     inner class SoundsViewHolder(val binding: ItemDogBinding) :
         RecyclerView.ViewHolder(binding.root) {
         fun bind(dog: Dog) {
             binding.dog = dog
         }
+    }
+
+    fun updatePostList(newDogList: ArrayList<Dog>) {
+        dogList = newDogList
+        notifyDataSetChanged()
     }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): SoundsViewHolder {
